@@ -5,13 +5,14 @@ import by.htp.library.service.ServiceException;
 import by.htp.library.service.ServiceProvider;
 import by.htp.library.service.UserService;
 
-public class AuthorizationCommand implements Command{
+public class ChangeUserStatus implements Command{
 
 	@Override
-	public String execute(String request) {
-		String[] strings = request.split("' ");
-    	String login = strings[0].substring(strings[0].indexOf("=") + 1);
-    	String password = strings[1].substring(strings[1].indexOf("=") + 1);
+	public String execute(String request) {   	
+    	String[] strings = request.split("' ");
+    	int id = Integer.parseInt(strings[0].substring(strings[0].indexOf("=") + 1));
+    	String status = strings[1].substring(strings[1].indexOf("=") + 1);
+
     	
     	String response = null;
     	
@@ -19,15 +20,13 @@ public class AuthorizationCommand implements Command{
 		UserService userService = provider.getUserService();
 		
 		try {
-			userService.authorization(login, password);
-			response = "Welcome";
+			userService.changeUserStatus(id, status);
+			response = "Status changed";
 		} catch (ServiceException e) {
-			response = "Incorrect login or password";
+			response = "Incorrect data";
 		}
 		
 		return response;
-
-
 	}
 
 }
