@@ -1,0 +1,6 @@
+id=1' author=Шарль Перро' title=Золушка' status=paper' count=56
+id=2' author=Эккель' title=Философия Java' status=paper, dig' count=40
+id=3' author=Бейтс' title=Изучаем Java' status=paper' count=50
+id=4' author=Бейтс' title=Изучаем Java' status=paper' count=50
+id=5' author=Бейтс' title=Изучаем Java' status=paper' count=50
+id=6' author=Бейтс' title=Изучаем Java' status=paper' count=50
